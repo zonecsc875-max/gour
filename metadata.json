@@ -1,0 +1,6 @@
+{
+  "name": "Santipur Utsabh",
+  "description": "Santipur Festival & Heritage Guide — Rash Yatra, Kali Puja, Mandir Directory & Route Navigation",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
