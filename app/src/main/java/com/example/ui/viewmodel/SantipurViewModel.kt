@@ -32,7 +32,10 @@ enum class AppScreen {
     CORRECTION_FORM,
     ADMIN_PANEL,
     ABOUT_SANTIPUR,
-    IN_APP_NAVIGATION
+    IN_APP_NAVIGATION,
+    RAI_RAJA_STORY,
+    BAMAKALI_DANCE_EVENT,
+    RASH_HERITAGE_DIRECTORY
 }
 
 data class UiState(
@@ -325,12 +328,35 @@ class SantipurViewModel : ViewModel() {
                     place.nameEn.lowercase().contains(query) ||
                     place.locality.lowercase().contains(query) ||
                     place.deityBn.lowercase().contains(query) ||
-                    place.deityEn.lowercase().contains(query)
+                    place.deityEn.lowercase().contains(query) ||
+                    place.aliases.any { it.lowercase().contains(query) }
 
             val matchesCategory = category == null || place.category == category
             val matchesCrowd = crowd == null || place.crowdStatus == crowd
 
             matchesQuery && matchesCategory && matchesCrowd
+        }
+    }
+
+    fun getHeritagePlacesFiltered(query: String, categoryFilter: String?): List<Place> {
+        val q = query.trim().lowercase()
+        return SantipurRepository.getHeritagePlaces().filter { place ->
+            val matchesQuery = q.isEmpty() ||
+                    place.nameBn.lowercase().contains(q) ||
+                    place.nameEn.lowercase().contains(q) ||
+                    place.locality.lowercase().contains(q) ||
+                    place.deityBn.lowercase().contains(q) ||
+                    place.deityEn.lowercase().contains(q) ||
+                    place.aliases.any { it.lowercase().contains(q) } ||
+                    place.architectureNotes.lowercase().contains(q)
+
+            val matchesCategory = when (categoryFilter) {
+                "গোস্বামী বাড়ি" -> place.category == PlaceCategory.GOSWAMI_BARI
+                "ঐতিহ্যবাহী মন্দির" -> place.category == PlaceCategory.HERITAGE_TEMPLE
+                else -> true
+            }
+
+            matchesQuery && matchesCategory
         }
     }
 

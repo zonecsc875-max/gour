@@ -528,6 +528,342 @@ fun HomeScreen(
                         }
                     }
                 }
+
+                // 3A. Rai Raja Dedicated Story Card
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 6.dp)
+                        .clickable { viewModel.navigateTo(AppScreen.RAI_RAJA_STORY) }
+                        .testTag("featured_rai_raja_story_card"),
+                    shape = RoundedCornerShape(20.dp),
+                    colors = CardDefaults.cardColors(containerColor = ShaktiDark),
+                    elevation = CardDefaults.cardElevation(defaultElevation = 3.dp)
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(
+                                Brush.horizontalGradient(
+                                    listOf(ShaktiDark, ShaktiDarkSurface, ShaktiRedDark)
+                                )
+                            )
+                            .padding(18.dp)
+                    ) {
+                        Column {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Surface(
+                                    color = ShaktiGold.copy(alpha = 0.25f),
+                                    shape = RoundedCornerShape(8.dp)
+                                ) {
+                                    Row(
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
+                                    ) {
+                                        Text("👑", fontSize = 12.sp)
+                                        Spacer(modifier = Modifier.width(4.dp))
+                                        Text(
+                                            text = if (isBn) "ঐতিহ্যময় কাহিনী" else "HERITAGE STORY",
+                                            style = MaterialTheme.typography.labelSmall,
+                                            fontWeight = FontWeight.Bold,
+                                            color = ShaktiGoldLight
+                                        )
+                                    }
+                                }
+
+                                Surface(
+                                    color = ShaktiRed.copy(alpha = 0.35f),
+                                    shape = RoundedCornerShape(12.dp)
+                                ) {
+                                    Text(
+                                        text = if (isBn) "স্থানীয় পরম্পরা" else "Local Lore",
+                                        style = MaterialTheme.typography.labelSmall,
+                                        color = ShaktiCream,
+                                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
+                                    )
+                                }
+                            }
+
+                            Spacer(modifier = Modifier.height(10.dp))
+
+                            Text(
+                                text = "রাই রাজা",
+                                style = MaterialTheme.typography.headlineSmall,
+                                fontWeight = FontWeight.ExtraBold,
+                                color = ShaktiGold
+                            )
+
+                            Text(
+                                text = "শান্তিপুরের রাসের এক বিশেষ পরম্পরার গল্প",
+                                style = MaterialTheme.typography.bodyMedium,
+                                fontWeight = FontWeight.SemiBold,
+                                color = Gold200,
+                                modifier = Modifier.padding(top = 2.dp)
+                            )
+
+                            Spacer(modifier = Modifier.height(6.dp))
+
+                            Text(
+                                text = "“রাসের আলোয়, ভক্তির আবহে—জীবন্ত হয়ে ওঠে শান্তিপুরের ঐতিহ্যের এক বিশেষ অধ্যায়।”",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = ShaktiCream.copy(alpha = 0.9f),
+                                maxLines = 2
+                            )
+
+                            Spacer(modifier = Modifier.height(12.dp))
+
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Text(
+                                    text = if (isBn) "৪টি অধ্যায়ে সম্পূর্ণ কাহিনী" else "4 Chapters Illustrated Lore",
+                                    style = MaterialTheme.typography.labelSmall,
+                                    color = Gold300
+                                )
+
+                                Button(
+                                    onClick = { viewModel.navigateTo(AppScreen.RAI_RAJA_STORY) },
+                                    colors = ButtonDefaults.buttonColors(
+                                        containerColor = ShaktiGold,
+                                        contentColor = ShaktiDark
+                                    ),
+                                    shape = RoundedCornerShape(12.dp),
+                                    contentPadding = PaddingValues(horizontal = 14.dp, vertical = 6.dp),
+                                    modifier = Modifier.height(34.dp)
+                                ) {
+                                    Text(
+                                        text = if (isBn) "গল্পটি পড়ুন" else "Read Story",
+                                        fontWeight = FontWeight.Bold,
+                                        fontSize = 12.sp
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // 3B. Maa Bamakali Famous Dance 2026 Announcement Card
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 6.dp)
+                        .clickable { viewModel.navigateTo(AppScreen.BAMAKALI_DANCE_EVENT) }
+                        .testTag("home_bamakali_dance_card"),
+                    shape = RoundedCornerShape(20.dp),
+                    colors = CardDefaults.cardColors(containerColor = ShaktiRedDark),
+                    elevation = CardDefaults.cardElevation(defaultElevation = 3.dp)
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(
+                                Brush.horizontalGradient(
+                                    listOf(ShaktiRedDark, ShaktiDarkSurface, ShaktiDark)
+                                )
+                            )
+                            .padding(18.dp)
+                    ) {
+                        Column {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Surface(
+                                    color = ShaktiRedLight,
+                                    shape = RoundedCornerShape(8.dp)
+                                ) {
+                                    Text(
+                                        text = if (isBn) "আসন্ন বিশেষ অনুষ্ঠান" else "SPECIAL ANNOUNCEMENT",
+                                        style = MaterialTheme.typography.labelSmall,
+                                        fontWeight = FontWeight.Bold,
+                                        color = Color.White,
+                                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
+                                    )
+                                }
+
+                                Surface(
+                                    color = ShaktiGold,
+                                    shape = RoundedCornerShape(12.dp)
+                                ) {
+                                    Text(
+                                        text = "৯ নভেম্বর ২০২৬ • রাত ৮টা",
+                                        style = MaterialTheme.typography.labelSmall,
+                                        fontWeight = FontWeight.Bold,
+                                        color = ShaktiDark,
+                                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
+                                    )
+                                }
+                            }
+
+                            Spacer(modifier = Modifier.height(10.dp))
+
+                            Text(
+                                text = "মা বামাকালীর বিখ্যাত নৃত্য",
+                                style = MaterialTheme.typography.titleLarge,
+                                fontWeight = FontWeight.ExtraBold,
+                                color = Gold100
+                            )
+
+                            Text(
+                                text = "স্থান: বেজপাড়া মাঠ, শান্তিপুর, নদীয়া (পূর্বের স্থান: বড়বাজার মোড়)",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = ShaktiGoldLight,
+                                modifier = Modifier.padding(top = 2.dp)
+                            )
+
+                            Spacer(modifier = Modifier.height(12.dp))
+
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Text(
+                                    text = if (isBn) "স্থান পরিবর্তন ও সুরক্ষা নির্দেশিকা" else "Relocated Venue & Guidelines",
+                                    style = MaterialTheme.typography.labelSmall,
+                                    color = WarmCream.copy(alpha = 0.8f)
+                                )
+
+                                Button(
+                                    onClick = { viewModel.navigateTo(AppScreen.BAMAKALI_DANCE_EVENT) },
+                                    colors = ButtonDefaults.buttonColors(
+                                        containerColor = ShaktiRed,
+                                        contentColor = Color.White
+                                    ),
+                                    shape = RoundedCornerShape(12.dp),
+                                    contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp),
+                                    modifier = Modifier.height(34.dp)
+                                ) {
+                                    Text(
+                                        text = if (isBn) "অনুষ্ঠান দেখুন" else "View Event",
+                                        fontWeight = FontWeight.Bold,
+                                        fontSize = 12.sp
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // 3C. Santipur Rash Utsav: Goswami Bari & Temple Heritage Directory Entry Card
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 6.dp)
+                        .clickable { viewModel.navigateTo(AppScreen.RASH_HERITAGE_DIRECTORY) }
+                        .testTag("home_rash_heritage_dir_card"),
+                    shape = RoundedCornerShape(20.dp),
+                    colors = CardDefaults.cardColors(containerColor = Color.White),
+                    elevation = CardDefaults.cardElevation(defaultElevation = 3.dp)
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(
+                                Brush.horizontalGradient(
+                                    listOf(ShaktiCream, Color.White, ShaktiGoldLight.copy(alpha = 0.3f))
+                                )
+                            )
+                            .padding(18.dp)
+                    ) {
+                        Column {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Surface(
+                                    color = ShaktiRed.copy(alpha = 0.12f),
+                                    shape = RoundedCornerShape(8.dp)
+                                ) {
+                                    Text(
+                                        text = if (isBn) "ঐতিহাসিক ডিরেক্টরি" else "HERITAGE DIRECTORY",
+                                        style = MaterialTheme.typography.labelSmall,
+                                        fontWeight = FontWeight.ExtraBold,
+                                        color = ShaktiRed,
+                                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
+                                    )
+                                }
+
+                                Surface(
+                                    color = StatusGreen.copy(alpha = 0.15f),
+                                    shape = RoundedCornerShape(12.dp)
+                                ) {
+                                    Text(
+                                        text = "১০টি প্রধান স্থান",
+                                        style = MaterialTheme.typography.labelSmall,
+                                        fontWeight = FontWeight.Bold,
+                                        color = StatusGreen,
+                                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
+                                    )
+                                }
+                            }
+
+                            Spacer(modifier = Modifier.height(10.dp))
+
+                            Text(
+                                text = "শান্তিপুর রাস উৎসব: গোস্বামী বাড়ি ও মন্দির",
+                                style = MaterialTheme.typography.titleLarge,
+                                fontWeight = FontWeight.ExtraBold,
+                                color = ShaktiDark
+                            )
+
+                            Text(
+                                text = "“রাসের ঐতিহ্য, মন্দিরের ইতিহাস, শান্তিপুরের গর্ব”",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = ShaktiRedDark,
+                                fontWeight = FontWeight.SemiBold,
+                                modifier = Modifier.padding(top = 2.dp)
+                            )
+
+                            Text(
+                                text = "বড় গোস্বামী, চাকফেরা, শ্যামচাঁদ, রাধাগোকুলচাঁদ, বাঁশবুনিয়া, বিজয়কৃষ্ণ গোস্বামীর বাড়ি সহ সুপ্রাচীন মন্দিরসমূহ।",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                modifier = Modifier.padding(top = 4.dp),
+                                maxLines = 2
+                            )
+
+                            Spacer(modifier = Modifier.height(12.dp))
+
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Text(
+                                    text = if (isBn) "মানচিত্র ও সময়রেখা সহ" else "Maps & Timeline Included",
+                                    style = MaterialTheme.typography.labelSmall,
+                                    color = Color.Gray
+                                )
+
+                                Button(
+                                    onClick = { viewModel.navigateTo(AppScreen.RASH_HERITAGE_DIRECTORY) },
+                                    colors = ButtonDefaults.buttonColors(
+                                        containerColor = ShaktiRed,
+                                        contentColor = Color.White
+                                    ),
+                                    shape = RoundedCornerShape(12.dp),
+                                    contentPadding = PaddingValues(horizontal = 14.dp, vertical = 6.dp),
+                                    modifier = Modifier.height(34.dp)
+                                ) {
+                                    Text(
+                                        text = if (isBn) "ডিরেক্টরি খুলুন" else "Open Directory",
+                                        fontWeight = FontWeight.Bold,
+                                        fontSize = 12.sp
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 

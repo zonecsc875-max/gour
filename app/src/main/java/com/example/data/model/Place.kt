@@ -12,6 +12,7 @@ enum class PlaceCategory(
     DURGA_PUJA("দুর্গাপুজো", "Durga Puja", "celebration"),
     RATH_YATRA("রথযাত্রা", "Rath Yatra", "directions_car"),
     HERITAGE_TEMPLE("ঐতিহ্যবাহী মন্দির", "Heritage Temple", "account_balance"),
+    GOSWAMI_BARI("গোস্বামী বাড়ি", "Goswami Bari", "cottage"),
     FAMILY_BAROWARI("বারোয়ারি ও পারিবারিক", "Barowari & Family Puja", "groups"),
     TRANSPORT("পরিবহন কেন্দ্র", "Transport Hub", "directions_bus"),
     FACILITY("জরুরি ও জনসুবিধা", "Public Facility & Emergency", "local_hospital")
@@ -43,7 +44,12 @@ data class Place(
     val isFamousHighlight: Boolean = false,
     val isRashParticipant: Boolean = false,
     val isKaliSpecial: Boolean = false,
-    val crowdStatus: CrowdStatus = CrowdStatus.MODERATE
+    val crowdStatus: CrowdStatus = CrowdStatus.MODERATE,
+    val googleMapsUrl: String? = null,
+    val aliases: List<String> = emptyList(),
+    val verificationStatus: String = "verified", // "verified", "map_link_provided", "research_candidate"
+    val architectureNotes: String = "",
+    val timelineEra: String = ""
 )
 
 enum class CrowdStatus(val labelBn: String, val labelEn: String) {

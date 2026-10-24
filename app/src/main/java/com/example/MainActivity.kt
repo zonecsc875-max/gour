@@ -125,6 +125,9 @@ fun SantipurApp(
                     AppScreen.ADMIN_PANEL -> AdminScreen(viewModel = viewModel)
                     AppScreen.ABOUT_SANTIPUR -> AboutScreen(viewModel = viewModel)
                     AppScreen.IN_APP_NAVIGATION -> InAppNavigationScreen(viewModel = viewModel)
+                    AppScreen.RAI_RAJA_STORY -> RaiRajaStoryScreen(viewModel = viewModel)
+                    AppScreen.BAMAKALI_DANCE_EVENT -> BamakaliDanceScreen(viewModel = viewModel)
+                    AppScreen.RASH_HERITAGE_DIRECTORY -> RashHeritageDirectoryScreen(viewModel = viewModel)
                 }
             }
         }
