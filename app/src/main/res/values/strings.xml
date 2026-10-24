@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Santipur Utsabh</string>
-    <string name="app_title_bn">উৎসবের শহর শান্তিপুর</string>
-    <string name="app_subtitle_en">Santipur Festival &amp; Heritage Guide</string>
-    <string name="tagline_bn">শান্তিপুরের প্রতিটি উৎসব, এবার আপনার হাতের মুঠোয়</string>
-    <string name="search_hint_bn">পুজো, মন্দির বা প্যান্ডেল খুঁজুন…</string>
-    <string name="rash_signature_bn">শান্তিপুরের রাস — ঐতিহ্য, ভক্তি ও বাংলার গর্ব</string>
-</resources>
